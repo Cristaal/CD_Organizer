@@ -41,3 +41,15 @@ describe ("#search_album") do
     expect(Cd.search_album("Lola vs. Powerman")).to(eq(test_catalogue))
   end
 end
+
+describe ("search_artist") do
+  it("searches for an artist and returns the result") do
+    test_artist = Artist.new({:name => "The Kinks"})
+    test_artist.save()
+    test_album = Album.new({:album_name => "Lola vs. Powerman"})
+    test_album.save()
+    test_catalogue = Cd.new({:artist => test_artist, :album_name => test_album})
+    test_catalogue.save
+    expect(Cd.search_artist("The Kinks")).to(eq(test_catalogue))
+  end
+end
