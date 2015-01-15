@@ -3,8 +3,8 @@ class Artist
   @@allnames=[]
 
 
-  define_method(:initialize) do |name|
-    @name = name
+  define_method(:initialize) do |attributes|
+    @name = attributes.fetch(:name)
     @id = @@allnames.length().+(1)
   end
 
