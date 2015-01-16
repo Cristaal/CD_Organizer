@@ -1,3 +1,13 @@
+<h3>A list of CDs</h3>
+<ul>
+  <% @cdlist= Cd.all() %>
+  <% @cdlist.each() do |cd| %>
+  <% find_cd = ((cd.album_name()).album_name())%>
+  <% find_artist = ((cd.artist()).name())%>
+  <li><%= find_artist%> - <%= find_cd %></li>
+    <%end %>
+</ul>
+
 <h3>Enter a CD</h3>
 <div class='form'>
   <form action='/submit' method='post'>
