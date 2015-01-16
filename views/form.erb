@@ -16,20 +16,26 @@
   </form>
 </div>
 
-<h3>Find a CD</h3>
+<h3>Find a CD by artist name</h3>
 <div class='form'>
-  <form action='/search' method='post'>
+  <form action='/artist_search' method='get'>
     <div class='form-group'>
       <label for='artist_search'>Artist name</label>
       <input type='text' name='artist_search' id='artist_search' class='form-control'>
     </div>
+    <br>
+    <button type="submit" class="btn btn-lg btn-primary">Search by artist</button>
+  </form>
+</div>
+
+<h3>Find a CD by album name</h3>
+<div class='form'>
+  <form action='/album_search' method='get'>
     <div class='form-group'>
       <label for='album_search'>Album name</label>
       <input type='text' name='album_search' id='album_search' class='form-control'>
     </div>
-
     <br>
-
     <button type="submit" class="btn btn-lg btn-primary">Find this cd</button>
   </form>
 </div>

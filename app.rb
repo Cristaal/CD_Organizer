@@ -20,5 +20,16 @@ post('/submit') do
   redirect ('/')
 end
 
-post('/search') do
+get('/artist_search') do
+  @cd = Cd.search_artist("search_artist")
+  @artist = (@cd.artist().name())
+  @album = (@cd.album_name().album_name())
+  erb(:organizer)
+end
+
+get('/album_search') do
+   @cd = Cd.search_album("album_search")
+   @artist = (@cd.artist().name())
+   @album = (@cd.album_name().album_name())
+   erb(:organizer)
 end
